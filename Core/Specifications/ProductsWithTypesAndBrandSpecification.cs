@@ -8,7 +8,7 @@ namespace Core.Specifications
         public ProductsWithTypesAndBrandSpecification(ProductSpecParams ProductParams)
             :base(x => 
               (string.IsNullOrEmpty(ProductParams.Search) || x.NameAr.ToLower().Contains(ProductParams.Search) || x.NameEn.ToLower().Contains(ProductParams.Search)) &&
-              (!ProductParams.typeId.HasValue || x.ProductTypeId == ProductParams.typeId)
+              (!ProductParams.typeId.HasValue || x.ProductTypeId == ProductParams.typeId) && (!ProductParams.brandId.HasValue || x.ProductBrandId == ProductParams.brandId)
             )
         {
 
@@ -25,14 +25,14 @@ namespace Core.Specifications
             {
                 switch (ProductParams.sort)
                 {
-                    case "idAsc":
-                        AddOrderBy(i => i.Id);
+                    case "priceAsc":
+                        AddOrderBy(i => i.Price);
                         break;
-                    case "idDesc":
-                        AddOrderByDescending(i => i.Id);
+                    case "priceDesc":
+                        AddOrderByDescending(i => i.Price);
                         break;
                     default:
-                        AddOrderBy(n => n.NameEn);
+                        AddOrderBy(n => n.NameAr);
                         break;
                 }
             }

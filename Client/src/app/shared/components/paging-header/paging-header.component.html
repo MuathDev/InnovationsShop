@@ -1,0 +1,15 @@
+<header>
+    <span *ngIf="totalCount && totalCount>0">
+              عرض
+              <strong>
+                  {{(pageNumber-1) * pageSize+1}} -
+                  {{pageNumber*pageSize
+                      > this.totalCount
+                      ? this.totalCount
+                      : pageNumber * pageSize
+                  }} 
+              </strong> من اصل <strong>{{this.totalCount}}</strong></span>
+    <span *ngIf="totalCount===0">
+                  النتيجة <strong>0</strong> 
+              </span>
+</header>
