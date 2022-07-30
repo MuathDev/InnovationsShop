@@ -1,0 +1,25 @@
+<div class="row" *ngIf="product">
+    <div class="col-lg-12">
+        <img src="{{product.pictureUrl}} " alt="{{product.nameAr}} " class="img-thumbnail" width="850" height="850">
+    </div>
+    <div class="col-lg-12 mt-5">
+        <h3>{{product.nameAr}}</h3>
+        <p>{{product.price | currency}}</p>
+        <div class="">
+            <i class="fa fa-minus-circle text-warning mx-2 " style="cursor: pointer; font-size:2em; "></i>
+            <span class="font-weight-bold " style="font-size: 1.5em; ">2</span>
+            <i class="fa fa-plus-circle text-warning mx-2 " style="cursor: pointer; font-size:2em; "></i>
+            <br>
+            <button class="btn btn-outline-secondary btn-lg ml-4 ">اضافة الى السلة</button>
+        </div>
+    </div>
+    div.col
+
+    <div class="row mt-5 ">
+        <div class="col-lg-12 ml-3 ">
+            <h4>الوصف</h4>
+            <p>{{product.descriptionAr}}</p>
+        </div>
+    </div>
+
+</div>
